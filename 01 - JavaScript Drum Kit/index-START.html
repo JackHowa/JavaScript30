@@ -9,6 +9,7 @@
 
 
   <div class="keys">
+      <!--data attributes for key -->
     <div data-key="65" class="key">
       <kbd>A</kbd>
       <span class="sound">clap</span>
@@ -58,7 +59,11 @@
   <audio data-key="76" src="sounds/tink.wav"></audio>
 
 <script>
-
+    //    have to listen
+    // listen for keydown event
+    window.addEventListener('keydown', function (e) {
+        console.log(e);
+    })
 </script>
 
 
