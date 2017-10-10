@@ -60,8 +60,9 @@
 
 <script>
     //    have to listen
-    // listen for keydown event
-    window.addEventListener('keydown', function (e) {
+
+
+    function playSound(e) {
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); // get corresponding audio element
         const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); // get corresponding audio element
         console.log(key);
@@ -69,7 +70,23 @@
         audio.currentTime = 0; // ensure repeats don't affect
         audio.play();
         key.classList.add('playing');
-    })
+    }
+
+
+    function removeTransition(e) {
+        if (e.propertyName !== 'transform') return; // skip if it's not a transform
+        this.classList.remove('playing');
+    }
+
+    // all the keys
+    const keys = document.querySelectorAll('.key');
+
+    keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+
+    // listen for keydown event
+    window.addEventListener('keydown', playSound);
+
+
 </script>
 
 
