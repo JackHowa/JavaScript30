@@ -63,8 +63,12 @@
     // listen for keydown event
     window.addEventListener('keydown', function (e) {
         const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`); // get corresponding audio element
+        const key = document.querySelector(`.key[data-key="${e.keyCode}"]`); // get corresponding audio element
+        console.log(key);
         if (!audio) return; // stop function from running if null
+        audio.currentTime = 0; // ensure repeats don't affect
         audio.play();
+        key.classList.add('playing');
     })
 </script>
 
