@@ -53,7 +53,7 @@
     // 4. How many years did all the inventors live?
 
     const totalYears = inventors.reduce((total, inventor) => {
-        return total + inventor.passed - inventor.year;
+        return total + age(inventor);
     }, 0);
 
     console.log(totalYears);
