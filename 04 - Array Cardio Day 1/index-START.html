@@ -72,6 +72,10 @@
 
     // 7. sort Exercise
     // Sort the people alphabetically by last name
+    // check example https://stackoverflow.com/questions/6712034/sort-array-by-firstname-alphabetically-in-javascript
+    const firstInLine = inventors.sort((a, b) => a.last !== b.last ? a.last > b.last ? 1 : -1 : 0);
+
+    console.table(firstInLine);
 
     // 8. Reduce Exercise
     // Sum up the instances of each of these
