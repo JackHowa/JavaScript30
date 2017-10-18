@@ -55,8 +55,8 @@
     // index + 1 is all elements after that position
     // optional second param, is ongoing if left out
     const newComments = [
-        ...comments.slice(index, 1),
-        ...comments.slice(index + 1)
+        ...comments.slice(commentIndex, 1),
+        ...comments.slice(commentIndex + 1)
     ];
 
     console.table(newComments);
