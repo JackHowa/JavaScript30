@@ -41,10 +41,25 @@
     // Array.prototype.find()
     // Find is like filter, but instead returns just the one you are looking for
     // find the comment with the ID of 823423
+    const comment = comments.find(comment => comment.id === 823423);
+    console.log(comment);
 
     // Array.prototype.findIndex()
     // Find the comment with this ID
     // delete the comment with the ID of 823423
+    const commentIndex = comments.findIndex(comment => comment.id === 823423);
+    console.log(commentIndex);
+
+    // fill the array with sliced comments
+    // use spread to flatten out the array
+    // index + 1 is all elements after that position
+    // optional second param, is ongoing if left out
+    const newComments = [
+        ...comments.slice(index, 1),
+        ...comments.slice(index + 1)
+    ];
+
+    console.table(newComments);
 
   </script>
 </body>
