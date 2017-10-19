@@ -7,7 +7,14 @@
 <body>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
-    //
+    const canvas = document.querySelector('#draw');
+    const ctx = canvas.getContext('2d'); // this is what we're drawing on
+
+    //resize canvas to window size
+    // adjust to screen size that canvas tag's width and height
+    canvas.height = window.innerHeight;
+    canvas.width = window.innerWidth;
+
 </script>
 
 <style>
