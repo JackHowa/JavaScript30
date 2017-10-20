@@ -17,6 +17,8 @@
       p.style.color = '#BADA55';
       p.style.fontSize = '50px';
     }
+    // Grouping together
+    console.group("all my tests");
 
     // Regular
     console.log("hello");
@@ -25,20 +27,37 @@
     console.log("hello %s", "yes");
 
     // Styled
+    console.log("%c This will be big!", "font-size: 50px");
 
     // warning!
+    console.warn("This will be yellow - yep and a warning");
 
     // Error :|
+    console.error("This looks red and has stack trace useful");
 
     // Info
+    console.info("Oh this is useful i"); // shows blue i 
 
     // Testing
+    const truthiness = true;
+    const falsiness = false;
+
+    // assert only shows if the comparator is false 
+    // imagine it'd be a good way to test variables throughout the code that you may be assuming are working 
+    console.assert(truthiness === falsiness, "these are not equal!"); // this will display because it's not equal 
+
+    // end grouping 
+    console.groupEnd("all my tests");
 
     // clearing
+    // is there a practical usage for this? 
+    // outside of trolling? 
+    // console.clear();
+
 
     // Viewing DOM Elements
 
-    // Grouping together
+    
 
     // counting
 
