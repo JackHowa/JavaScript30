@@ -10,7 +10,8 @@
 
   <script>
     const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
-
+    // shows where it's broken on 
+    // use break on attribute modifications 
     function makeGreen() {
       const p = document.querySelector('p');
       p.style.color = '#BADA55';
@@ -18,8 +19,10 @@
     }
 
     // Regular
+    console.log("hello");
 
     // Interpolated
+    console.log("hello %s", "yes");
 
     // Styled
 
