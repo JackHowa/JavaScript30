@@ -100,22 +100,34 @@
 
 <script>
   const checkBoxes = document.querySelectorAll('.inbox input[type="checkbox"]');
-  console.log(checkBoxes);
 
   // define empty var 
   let lastChecked;
 
   function handleClick(e) {
 
+    let inbetween = false;
+   
+
     // check if shift key is down 
     // and check if they are checking heh
     // wow surprised shiftKey works 
     // this is checking the element whether or not it's checked input? 
-    if (e.shiftKey && this.checked ) {
+    if (e.shiftKey && this.checked) {
+
       // do what we need 
       // loop through all of these 
-      
+      checkBoxes.forEach(checkbox => {
+        // check if equal to itself 
+        // checks for either first or last
+        if (checkbox === this || checkbox === lastChecked) {
+          inbetween = !inbetween;
+        }
 
+        if (inbetween) {
+          checkbox.checked = true;
+        }
+      });
     }
     
     lastChecked = this; 
