@@ -182,6 +182,42 @@
     </li>
   </ul>
 <script>
+	const timeNodes = document.querySelectorAll('[data-time]')
+
+	// turn this nodelist into an array
+	const timeArray = Array.from(timeNodes);
+
+	const seconds = timeArray
+		.map(element => element.dataset.time)
+		.map(timeCode => {
+			// can call the function parse float right in the map
+			// same thing as .map(element => parseFlat(element))
+			// pass the function directly
+			const [mins, secs] = timeCode.split(':').map(parseFloat);
+			return (mins * 60) + secs;
+		})
+		.reduce((total, vidSeconds) => total + vidSeconds); 
+
+	// want to reassign this variable
+	// so that we can change it down the road
+	let secondsLeft = seconds;
+	// only want whole hours
+	const hours = Math.floor(secondsLeft / 3600);
+
+	// mod is how many is left after they've been distributed
+	secondsLeft = secondsLeft % 3600;
+
+	const mins = Math.floor(secondsLeft / 60);
+
+	secondsLeft = secondsLeft % 60;
+
+	console.log('full hours', hours);
+
+	console.log('full minutes', mins);
+
+	console.log('leftover seconds', secondsLeft)
+  	
+	console.log(hours, mins, secondsLeft)
 </script>
 </body>
 </html>
